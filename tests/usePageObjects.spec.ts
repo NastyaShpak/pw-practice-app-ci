@@ -35,6 +35,8 @@ test('parametrized methods @smoke', async({page}) => {
 
 test.only('testing with agros CI', async({page}) => {
     const pageManager = new PageManager(page)
+    await pageManager.navigateTo().formLayoutsPage()
     await argosScreenshot(page, "form layouts page");
+    await pageManager.navigateTo().datepickerPage()
     await argosScreenshot(page, "datepicker page");
 })
